@@ -1,6 +1,6 @@
 # ToroAlertsMenuExtra
 
-一個 macOS menu bar 應用程式，透過鍵盤打字即時驅動 USB Hubcot 裝置揮動手臂。
+一個 macOS menu bar 應用程式，透過鍵盤打字即時驅動 USB [Hubcot](https://akiba-pc.watch.impress.co.jp/hotline/20010113/etc_toro.html) 裝置揮動手臂。
 
 ## 簡介
 
@@ -149,3 +149,6 @@ GNU General Public License for more details.
 ## 相關專案
 
 - [ToroAlerts](https://github.com/digdog/ToroAlerts) — USB Hubcot 裝置驅動程式與命令列工具
+- [GNU General Public License](https://www.gnu.org/licenses/gpl-2.0.html)
+- [USB-HUBマスコット（トロ）](https://www.sanwa.co.jp/product/syohin?code=A-DTUH-01)
+- [Akiba PC Hotline (2001/1/13)): 動くマスコット付きUSB HUBが登場、第1弾は「トロ」](https://akiba-pc.watch.impress.co.jp/hotline/20010113/etc_toro.html)
