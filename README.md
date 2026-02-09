@@ -6,6 +6,10 @@
 
 ToroAlertsMenuExtra 是 [ToroAlerts](https://github.com/digdog/ToroAlerts) 的 menu bar companion app。它在背景監聽鍵盤事件，根據按鍵的左右手位置與打字節奏，自動轉換為對應的裝置動作指令，讓 Toro 或 Kitty 隨著你的打字節奏揮舞雙臂。
 
+↓ 實際運作影片，井上トロ本人親自示範！
+
+[ToroAlertsMenuExtraDemo.webm](https://github.com/user-attachments/assets/b3597f9e-7a86-4ca1-85e0-6038090f92a4)
+
 ### 運作原理
 
 ```
