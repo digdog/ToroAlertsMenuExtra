@@ -36,7 +36,9 @@ class KeyboardMonitor {
     var rightActive = false
     var typingInterval: TimeInterval = 0.0
     var typingSpeed: Double = 0.0
+    var isActive = false
     var isMonitoring = false
+    var hasPermission = HIDKeyboard.hasInputMonitoringPermission
     var isConnected = false
     var connectionError: String?
 
@@ -59,13 +61,16 @@ class KeyboardMonitor {
     func start() {
         guard processingTask == nil else { return }
 
+        isActive = true
+
         let (rawStream, rawContinuation) = AsyncStream<HIDKeyboard.RawKeyEvent>.makeStream(
             bufferingPolicy: .unbounded
         )
 
         HIDKeyboard.shared.startMonitoring(continuation: rawContinuation)
 
-        if HIDKeyboard.shared.isMonitoring {
+        hasPermission = HIDKeyboard.shared.isMonitoring
+        if hasPermission {
             isMonitoring = true
         }
 
@@ -97,6 +102,8 @@ class KeyboardMonitor {
     }
 
     func stop() {
+        isActive = false
+
         processingTask?.cancel()
         processingTask = nil
 

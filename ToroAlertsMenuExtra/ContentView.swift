@@ -25,7 +25,7 @@ struct ContentView: View {
 
 // MARK: - Connection Status
 
-/// Observation scope: isConnected, connectionError only.
+/// Observation scope: isConnected, connectionError, isActive only.
 private struct ConnectionStatusView: View {
     @Environment(KeyboardMonitor.self) var monitor
 
@@ -48,7 +48,7 @@ private struct ConnectionStatusView: View {
                 }
                 .buttonStyle(.link)
             }
-        } else {
+        } else if monitor.isActive {
             HStack(spacing: 6) {
                 ProgressView()
                     .controlSize(.small)
@@ -56,6 +56,10 @@ private struct ConnectionStatusView: View {
                     .font(.callout)
                     .foregroundStyle(.orange)
             }
+        } else {
+            Label("Not Active", systemImage: "cable.connector.slash")
+                .font(.callout)
+                .foregroundStyle(.secondary)
         }
     }
 }
@@ -144,7 +148,7 @@ private struct TypingSpeedView: View {
 
 // MARK: - Permission Status
 
-/// Observation scope: isMonitoring only.
+/// Observation scope: isMonitoring, hasPermission only.
 private struct PermissionStatusView: View {
     @Environment(KeyboardMonitor.self) var monitor
 
@@ -153,6 +157,10 @@ private struct PermissionStatusView: View {
             Label("Monitoring Active", systemImage: "checkmark.circle.fill")
                 .font(.callout)
                 .foregroundStyle(.green)
+        } else if monitor.hasPermission {
+            Label("Permission Granted", systemImage: "checkmark.circle")
+                .font(.callout)
+                .foregroundStyle(.secondary)
         } else {
             VStack(spacing: 8) {
                 Text("Input Monitoring Access Required")

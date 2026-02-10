@@ -51,6 +51,11 @@ class HIDKeyboard {
     /// `true` if the IOHIDManager is currently open and monitoring.
     var isMonitoring: Bool { hidManager != nil }
 
+    /// Checks if Input Monitoring permission is granted without starting persistent monitoring.
+    static var hasInputMonitoringPermission: Bool {
+        IOHIDCheckAccess(kIOHIDRequestTypeListenEvent) == kIOHIDAccessTypeGranted
+    }
+
     /// Opens the IOHIDManager and begins receiving global key events.
     /// Requires "Input Monitoring" permission (System Settings > Privacy & Security).
     ///

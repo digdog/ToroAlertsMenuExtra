@@ -155,4 +155,4 @@ GNU General Public License for more details.
 - [ToroAlerts](https://github.com/digdog/ToroAlerts) — USB Hubcot 裝置驅動程式與命令列工具
 - [GNU General Public License](https://www.gnu.org/licenses/gpl-2.0.html)
 - [USB-HUBマスコット（トロ）](https://www.sanwa.co.jp/product/syohin?code=A-DTUH-01)
-- [Akiba PC Hotline (2001/1/13)): 動くマスコット付きUSB HUBが登場、第1弾は「トロ」](https://akiba-pc.watch.impress.co.jp/hotline/20010113/etc_toro.html)
+- [Akiba PC Hotline (2001/1/13): 動くマスコット付きUSB HUBが登場、第1弾は「トロ」](https://akiba-pc.watch.impress.co.jp/hotline/20010113/etc_toro.html)
